@@ -227,8 +227,59 @@ console.log(aluno.mostraIdade());
 ## Operador (spread ou rest)
 - spread (espalhar): usado para dividir elementos de um array ou propriedades de um objeto
 ```js
+/* Usando o ... como operator spread (espalhar)
+Na prática, copiamos o conteúdo de um array (bandas) para dentro de outro (maisBnadas). */
 
+//IMUTABILIDADE (não muda)
+const bandas = ['Rush', 'Slayer', 'Guns', 'Black Sabbath'];
+const maisBandas = [...bandas, 'Van halen', 'Deep Purple'];
+
+console.log(maisBandas);
+
+console.log("=====================================================");
+
+// Spread com objeto
+const dados = {
+    nome: 'Camila',
+    idade: 18
+};
+
+const novosDados = {
+    ...dados,
+    cidade: 'São Paulo',
+    estado: 'SP'
+};
+
+console.log(novosDados);
 ```
 - rest (resto, sobra, resíduo): usado para mesclar uma lista de parâmetros de função como um array 
+
+```js
+const ordenar = ( ...parametros ) => { return parametros.sort(); 
+}
+
+console.log( ordenar('Luna', 'Nem', 'João', 'Gato') );
+
+console.log( ordenar('Sticky fingers', 'Tyler', 'McMiller', 'Frank Ocean'));
+
+let cafezinho = ['Pãozinho de parmesão', 'Presunto e queijo', 'Cinamon roll', 'Bolinho de cenoura', 'Cafézinho gelado'];
+
+console.log (ordenar(...cafezinho)); // Spread
+
+
+const soma = (...valores) => { let total = 0;
+
+    for ( let valor of valores ){
+        total += valor;
+    }
+    return total;
+}
+ 
+
+
+console.log( soma(10, 20));
+console.log( soma(10, 20, 55, 21, 98, 23));
+```
+
 
 
